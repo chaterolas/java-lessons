@@ -6,12 +6,28 @@ public class BinarySearchTree extends BinaryTreeImpl {
 		
 	}
 	
-	@Override
-	public void add(int element) {
-		int value = this.element;
+	public BinarySearchTree(int element) {
+		super(element);
 	}
-
-	public void remove(int element) {
+	
+	private int lookupAux(BinaryTreeNode node, int element) throws BinaryTreeElementNotFoundException {
+		if(node == null) {
+			throw new BinaryTreeElementNotFoundException();
+		}
 		
+		if(element == node.getElement()) {
+			return element;
+		}
+		else if(element < node.getElement()) {
+			return lookupAux(node.getLeftChild(), element);
+		}
+		else {
+			return lookupAux(node.getRightChild(), element);
+		}
+	}
+	
+	@Override
+	public int lookup(int element) throws BinaryTreeElementNotFoundException {
+		return lookupAux(this.getRoot(), element);
 	}
 }
