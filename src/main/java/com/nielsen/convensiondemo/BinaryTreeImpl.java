@@ -101,6 +101,7 @@ public class BinaryTreeImpl implements BinaryTree {
 
 	@Override
 	public int lookup(int element) throws BinaryTreeElementNotFoundException {
+		System.out.println("Binary tree impl");
 		return root.lookupAux(element);
 	}	
 
