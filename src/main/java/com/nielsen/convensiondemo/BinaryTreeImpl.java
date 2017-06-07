@@ -73,6 +73,55 @@ public class BinaryTreeImpl implements BinaryTree {
 			return "BinaryTreeNode [element=" + element + ", parent=" + parent + ", leftChild=" + leftChild
 					+ ", rightChild=" + rightChild + "]";
 		}
+
+		@Override
+		public int hashCode() {
+			final int prime = 31;
+			int result = 1;
+			result = prime * result + getOuterType().hashCode();
+			result = prime * result + element;
+			result = prime * result + ((leftChild == null) ? 0 : leftChild.hashCode());
+			result = prime * result + ((parent == null) ? 0 : parent.hashCode());
+			result = prime * result + ((rightChild == null) ? 0 : rightChild.hashCode());
+			return result;
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			BinaryTreeNode other = (BinaryTreeNode) obj;
+			if (!getOuterType().equals(other.getOuterType()))
+				return false;
+			if (element != other.element)
+				return false;
+			if (leftChild == null) {
+				if (other.leftChild != null)
+					return false;
+			} else if (!leftChild.equals(other.leftChild))
+				return false;
+			if (parent == null) {
+				if (other.parent != null)
+					return false;
+			} else if (!parent.equals(other.parent))
+				return false;
+			if (rightChild == null) {
+				if (other.rightChild != null)
+					return false;
+			} else if (!rightChild.equals(other.rightChild))
+				return false;
+			return true;
+		}
+
+		private BinaryTreeImpl getOuterType() {
+			return BinaryTreeImpl.this;
+		}
+		
+		
 	}
 
 	private static final int MAXIMAL_HEIGHT = 20;
