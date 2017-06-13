@@ -7,6 +7,8 @@ import static org.hamcrest.Matchers.is;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.nielsen.convensiondemo.model.BinaryTree;
+
 public class BinarySearchTreeTest {
 
 	BinarySearchTree binarySearchTree;

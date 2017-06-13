@@ -1,4 +1,6 @@
-package com.nielsen.convensiondemo;
+package com.nielsen.convensiondemo.model;
+
+import com.nielsen.convensiondemo.BinaryTreeElementNotFoundException;
 
 public interface BinaryTree {
 	void add(int element);

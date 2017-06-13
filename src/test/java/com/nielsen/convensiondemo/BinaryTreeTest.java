@@ -12,6 +12,9 @@ import java.nio.Buffer;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.nielsen.convensiondemo.model.BinaryTree;
+import com.nielsen.convensiondemo.model.BinaryTreeImpl;
+
 import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.Matchers.*;
 

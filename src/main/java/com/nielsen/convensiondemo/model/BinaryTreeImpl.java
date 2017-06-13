@@ -1,9 +1,13 @@
-package com.nielsen.convensiondemo;
+package com.nielsen.convensiondemo.model;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.nielsen.convensiondemo.BinaryTreeElementNotFoundException;
 
 public class BinaryTreeImpl implements BinaryTree {
 	
 	public class BinaryTreeNode {
 		private int element;
+		@JsonIgnore
 		private BinaryTreeNode parent;
 		private BinaryTreeNode leftChild;
 		private BinaryTreeNode rightChild;

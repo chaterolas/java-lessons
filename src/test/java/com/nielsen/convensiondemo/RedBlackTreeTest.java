@@ -3,6 +3,8 @@ package com.nielsen.convensiondemo;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.nielsen.convensiondemo.model.BinaryTreeImpl;
+
 public class RedBlackTreeTest {
 
 	

@@ -2,6 +2,8 @@ package com.nielsen.convensiondemo;
 
 import java.util.List;
 
+import com.nielsen.convensiondemo.model.BinaryTreeImpl;
+
 public class BinarySearchTreeImpl extends BinaryTreeImpl implements BinarySearchTree {
 	
 	
