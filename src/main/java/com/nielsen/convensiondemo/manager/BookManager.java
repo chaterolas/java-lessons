@@ -6,6 +6,6 @@ import com.nielsen.convensiondemo.model.Book;
 
 public interface BookManager {
 	List<Book> list();
-	Book get(Integer bookId);
+	Book get(Long bookId);
 	String save(Book book);
 }

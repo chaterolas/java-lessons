@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -28,9 +29,9 @@ public class ApiBinaryTreeController {
 		this.bookManager = bookManager;
 	}*/
 	
-	/*public ApiBinaryTreeController(BookManager bookManager) {
+	public ApiBinaryTreeController(BookManager bookManager) {
 		this.bookManager = bookManager;
-	}*/
+	}
 	
 	@RequestMapping(path = "/hello-world", method = RequestMethod.GET) 
 	public String helloWorld() {
@@ -53,9 +54,9 @@ public class ApiBinaryTreeController {
 		return binaryTreeImpl.toString();
 	}
 	
-	@RequestMapping(path = "/get-book", method = RequestMethod.GET)
-	public Book getBook() {
-		return bookManager.get(1);
+	@RequestMapping(path = "/get-book/{bookId}", method = RequestMethod.GET)
+	public Book getBook(@PathVariable Long bookId) {
+		return bookManager.get(bookId);
 	}
 
 	@RequestMapping(path = "/convert-book", method = RequestMethod.POST)
